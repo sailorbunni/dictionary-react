@@ -9,11 +9,11 @@ function App() {
         <Dictionary />
       </header>
       <footer>
-        <a href="https://github.com/sailorbunni/weather-react">
+        <a href="https://github.com/sailorbunni/dictionary-react">
           Open-source code
         </a>{" "}
         by Donna Dinh. Hosted on{" "}
-        <a href="https://wonderful-panini-1db93a.netlify.app/"> Netlify</a>{" "}
+        <a href="https://serene-mcnulty-70db74.netlify.app/"> Netlify</a>{" "}
         <img src={logo} className="App-logo" alt="logo" />
       </footer>
     </div>

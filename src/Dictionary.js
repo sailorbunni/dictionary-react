@@ -1,13 +1,27 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import "./dictionary.css";
 
 export default function Dictionary() {
+  const [word, setWord] = useState();
+  const apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
+
+  function handleResponse(response) {
+    console.log(response);
+  }
+  function handleSubmit(event) {
+    event.preventDefault();
+    axios.get(apiUrl).then(handleResponse);
+  }
+  function updateWord(event) {
+    setWord(event.target.value);
+  }
   return (
     <div className="Dictionary">
       <h1> Dictionary </h1>
       <br />
       <h4>What would you like to look up?</h4>
-      <form className="mb-3">
+      <form onSubmit={handleSubmit} className="mb-3">
         <div className="row">
           <div className="col-9">
             <input
@@ -15,6 +29,7 @@ export default function Dictionary() {
               placeholder="Type a city.."
               className="form-control"
               autoComplete="off"
+              onChange={updateWord}
             />
           </div>
           <div className="col-3">

@@ -1,0 +1,15 @@
+.Dictionary {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #dadde1;
+  border-radius: 5px;
+}
+h4 {
+  margin: 20px;
+}
+.Word {
+  text-align: left;
+}
+.soundsLike {
+  font-size: 20px;
+}

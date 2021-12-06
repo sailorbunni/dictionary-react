@@ -1,8 +1,22 @@
+:root {
+  --primary-color: #eeeeee;
+  --secondary-color: #acc6aa;
+  --third-color: #71a0a5;
+  --forth-color: #77628c;
+}
 .Dictionary {
+  background-color: var(--secondary-color);
   text-align: center;
   padding: 20px;
   border: 1px solid #dadde1;
   border-radius: 5px;
+  font-family: "Junge", serif;
+  color: var(--primary-color);
+}
+h1 {
+  font-family: "WindSong", cursive;
+  font-size: 65px;
+  color: var(--forth-color);
 }
 h4 {
   margin: 20px;
@@ -12,4 +26,11 @@ h4 {
 }
 .soundsLike {
   font-size: 20px;
+}
+.link {
+  text-decoration: none;
+}
+.partOfSpeech {
+  font-size: 25px;
+  color: var(--third-color);
 }

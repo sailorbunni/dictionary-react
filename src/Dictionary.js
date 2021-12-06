@@ -9,7 +9,6 @@ export default function Dictionary() {
   const apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
 
   function handleResponse(response) {
-    console.log(response);
     setResults(response.data[0]);
   }
   function handleSubmit(event) {
@@ -39,7 +38,7 @@ export default function Dictionary() {
             <input
               type="submit"
               value="Search"
-              className="btn btn-primary w-100"
+              className="btn btn-outline-light w-100"
             />
           </div>
         </div>

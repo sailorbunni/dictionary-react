@@ -10,7 +10,9 @@ export default function Results(props) {
           {props.results.word}{" "}
           <span className="soundsLike">
             /{props.results.phonetic}/{" "}
-            <a href={props.results.phonetics[0].audio}>🔊</a>
+            <a href={props.results.phonetics[0].audio} className="link">
+              🔊
+            </a>
           </span>
         </h2>
         <hr />

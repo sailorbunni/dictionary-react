@@ -8,7 +8,10 @@ export default function Results(props) {
       <div className="Word">
         <h2>
           {props.results.word}{" "}
-          <span className="soundsLike">/{props.results.phonetic}/ </span>
+          <span className="soundsLike">
+            /{props.results.phonetic}/{" "}
+            <a href={props.results.phonetics[0].audio}>🔊</a>
+          </span>
         </h2>
         <hr />
         {props.results.meanings.map(function (meaning, index) {

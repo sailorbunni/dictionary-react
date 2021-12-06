@@ -34,3 +34,6 @@ h4 {
   font-size: 25px;
   color: var(--third-color);
 }
+.photo img {
+  margin-bottom: 15px;
+}

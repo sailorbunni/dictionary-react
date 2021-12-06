@@ -2,18 +2,32 @@ import axios from "axios";
 import React, { useState } from "react";
 import "./dictionary.css";
 import Results from "./Results";
+import Photos from "./Photos";
 
 export default function Dictionary() {
   const [word, setWord] = useState();
   const [results, setResults] = useState(null);
+  const [photos, setPhotos] = useState(null);
   const apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
 
   function handleResponse(response) {
     setResults(response.data[0]);
   }
+  function handlePexelsResponse(response) {
+    setPhotos(response.data.photos);
+  }
   function handleSubmit(event) {
     event.preventDefault();
     axios.get(apiUrl).then(handleResponse);
+
+    let pexelsApiKey =
+      "563492ad6f91700001000001ca133aef930447a7b74da40342b4cedc";
+    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${word}&per_page=6`;
+    axios
+      .get(pexelsApiUrl, {
+        headers: { Authorization: `Bearer ${pexelsApiKey}` },
+      })
+      .then(handlePexelsResponse);
   }
   function updateWord(event) {
     setWord(event.target.value);
@@ -44,6 +58,7 @@ export default function Dictionary() {
       </form>
       <br />
       <Results results={results} />
+      <Photos photos={photos} alt={word} />
     </div>
   );
 }

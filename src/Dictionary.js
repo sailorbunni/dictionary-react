@@ -21,7 +21,6 @@ export default function Dictionary() {
   return (
     <div className="Dictionary">
       <h1> Dictionary </h1>
-      <br />
       <h4>What would you like to look up?</h4>
       <form onSubmit={handleSubmit} className="mb-3">
         <div className="row">
